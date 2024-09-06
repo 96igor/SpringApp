@@ -10,7 +10,7 @@
     <context:property-placeholder location="classpath:musicPlayer.properties"/>
 
     <bean id="musicBean"
-          class="ru.alishev.springcourse2.ClassicalMusic">
+          class="ru.alishev.springcourse2.RapMusic">
      </bean>
 
     <bean id="musicPlayer"
