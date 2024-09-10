@@ -1,6 +1,11 @@
 package ru.alishev.springcourse2;
 
 public class ClassicalMusic implements Music {
+    private ClassicalMusic() {}
+
+    public static ClassicalMusic getClassicalMusic() {
+        return new ClassicalMusic();
+    }
 
     public void doMyInit() {
         System.out.println("Doing my initialization");

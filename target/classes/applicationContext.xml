@@ -11,8 +11,9 @@
 
     <bean id="musicBean"
           class="ru.alishev.springcourse2.ClassicalMusic"
-            init-method="doMyInit"
-              destroy-method="doMyDestroy">
+          init-method="doMyInit"
+          destroy-method="doMyDestroy"
+          factory-method="getClassicalMusic">
      </bean>
 
 <!--    <bean id="musicPlayer"-->
