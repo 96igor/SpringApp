@@ -1,8 +1,8 @@
 package ru.alishev.springcourse2;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Component;
+import java.util.List;
 
 @Component
 public class MusicPlayer {
@@ -16,6 +16,10 @@ public class MusicPlayer {
     }
 
     public String playMusic() {
-        return "Playing: " + music1.getSong() + ", " + music2.getSong();
+        List<String> rockSongs = music1.getSong();
+        List<String> classicalSongs = music2.getSong();
+
+        return "Playing rock: " + String.join(", ", rockSongs) +
+                "\nPlaying classical: " + String.join(", ", classicalSongs);
     }
 }
