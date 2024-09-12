@@ -1,11 +1,14 @@
 package ru.alishev.springcourse2;
 
 import org.springframework.stereotype.Component;
+import java.util.Arrays;
+import java.util.List;
+
 
 @Component
 public class RockMusic implements Music {
     @Override
-    public String getSong() {
-        return "Wind cries Mary";
+    public List<String> getSong() {
+        return Arrays.asList("Wind cries Mary", "Smoke on the Water", "Kashmir");
     }
 }
