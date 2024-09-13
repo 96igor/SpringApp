@@ -11,4 +11,4 @@
 
     <context:property-placeholder location="musicPlayer.properties"/>
 
-</beans>
+    </beans>
