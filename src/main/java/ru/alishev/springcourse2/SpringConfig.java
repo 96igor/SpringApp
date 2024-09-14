@@ -2,7 +2,6 @@ package ru.alishev.springcourse2;
 
 
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.ComponentScan;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 
@@ -20,8 +19,13 @@ public class SpringConfig {
     }
 
     @Bean
+    public RapMusic rapMusic() {
+        return new RapMusic();
+    }
+
+    @Bean
     public MusicPlayer musicPlayer() {
-        return new MusicPlayer(classicalMusic(), rockMusic());
+        return new MusicPlayer(classicalMusic(), rockMusic(), rapMusic());
     }
 
     @Bean
