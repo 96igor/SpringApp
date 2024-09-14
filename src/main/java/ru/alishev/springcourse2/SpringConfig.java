@@ -1,9 +1,10 @@
 package ru.alishev.springcourse2;
 
-
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
+import java.util.ArrayList;
+import java.util.List;
 
 @Configuration
 @PropertySource("classpath:musicPlayer.properties")
@@ -23,9 +24,17 @@ public class SpringConfig {
         return new RapMusic();
     }
 
+    public List<Music> musicList() {
+        List<Music> musicList = new ArrayList<>();
+        musicList.add(classicalMusic());
+        musicList.add(rockMusic());
+        musicList.add(rapMusic());
+        return musicList;
+    }
+
     @Bean
     public MusicPlayer musicPlayer() {
-        return new MusicPlayer(classicalMusic(), rockMusic(), rapMusic());
+        return new MusicPlayer(musicList());
     }
 
     @Bean
