@@ -2,6 +2,7 @@ package ru.alishev.springcourse2;
 
 import java.util.List;
 import org.springframework.beans.factory.annotation.Value;
+import java.util.Random;
 
 public class MusicPlayer {
 
@@ -20,6 +21,7 @@ public class MusicPlayer {
     }
 
     private List<Music> musicList;
+    private Random random = new Random();
 
     public MusicPlayer(List<Music> musicList) {
         this.musicList = musicList;
@@ -27,14 +29,8 @@ public class MusicPlayer {
     }
 
     public String playMusic() {
-        StringBuilder sb = new StringBuilder("Playing: ");
-        for (Music music : musicList) {
-            sb.append(music.getSong()).append(", ");
-        }
-
-        if (sb.length() > 0) {
-            sb.setLength(sb.length() - 2);
-        }
-        return sb.toString();
+        int randomIndex = random.nextInt(musicList.size());
+        Music randomMusic = musicList.get(randomIndex);
+        return "Playing: " + randomMusic.getSong();
     }
 }
